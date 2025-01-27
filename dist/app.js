@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const models_1 = require("./models");
+const todolist = new models_1.GestionnaireTaches();
+const task1 = new models_1.Tache("Faire les courses", "Acheter du pain et du lait", models_1.EtatTache.AFAIRE);
+const task2 = new models_1.Tache("Étudier TypeScript", "Revoir les bases des types et classes", models_1.EtatTache.AFAIRE);
+todolist.ajouterTache(task1);
+todolist.ajouterTache(task2);
+console.log("Liste initiale :");
+todolist.afficherTaches();
+todolist.changerEtat(0, models_1.EtatTache.ENCOURS);
+console.log("\nAprès changement d'état :");
+todolist.afficherTaches();
+todolist.supprimerTache(1);
+console.log("\nAprès suppression :");
+todolist.afficherTaches();
